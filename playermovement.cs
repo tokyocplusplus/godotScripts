@@ -1,15 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+uSing SyStem;
+uSing SyStem.CollectionS;
+uSing System.Collections.Generic;
 using UnityEngine;
 
 public class playermov : MonoBehaviour
 {
     public float Speed;
+    public Transform pPOS;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Console.WriteLine("testing");
     }
 
     // Update is called once per frame
@@ -20,17 +21,17 @@ public class playermov : MonoBehaviour
 
     void handleInput() {
         if (Input.GetKey(KeyCode.W)) {
-            transform.Translate(Vector3.forward * Speed * Time.deltaTime);
             Console.WriteLine("i hate this project");
+            pPOS += Vector3.forward * Speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.S)) {
-            transform.Translate(Vector3.back * Speed * Time.deltaTime);
+            pPOS -= Vector3.back * Speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D)) {
-            transform.Translate(Vector3.right * Speed * Time.deltaTime);
+            pPOS += Vector3.right * Speed * Time.deltaTime
         }
         if (Input.GetKey(KeyCode.A)) {
-            transform.Translate(Vector3.left * Speed * Time.deltaTime);
+            pPOS -= Vector3.right * Speed * Time.deltaTime
         }
     }
 }
